@@ -1,0 +1,151 @@
+\oddsidemargin 0in \evensidemargin 0in \marginparwidth 40pt
+\marginparsep 10pt \topmargin 0pt \headsep 0in \headheight 0in
+\textheight 8.5in \textwidth 6.5in \brokenpenalty=10000
+
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{latexsym}
+\usepackage{epsfig}
+\usepackage{bm}
+\usepackage{xspace}
+\usepackage{times}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{subcaption}
+\usepackage{float}
+ 
+\definecolor{codegreen}{rgb}{0.3,0.6,0.4}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\lstdefinestyle{mystyle}{
+    language = C++,
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{blue},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{red},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{%
+    language         = C++,
+    basicstyle       = \ttfamily,
+    keywordstyle     = \bfseries\color{blue},
+    stringstyle      = \color{magenta},
+    commentstyle     = \color{ForestGreen},
+    showstringspaces = false,
+}
+
+
+\def\LabStr{??}
+\def\LabNum{??}
+\newcommand{\Instructor}[1]{\def\LabStr{Instructor: #1}}
+\newcommand{\Instructors}[1]{\def\LabStr{Instructors: #1}}
+\newcommand{\LabNumber}[1]{\def\LabNum{#1}}
+\newcommand{\LabTitle}[1]{\def\LabTitle{#1}}
+\newcommand{\LabDate}[1]{\def\LabDate{#1}}
+
+\newdimen\headerwidth
+
+\newcommand{\MakeLabPrelimTop}{
+\noindent
+\begin{center}
+  \framebox{
+    \vbox{
+      \headerwidth=\textwidth
+      \advance\headerwidth by -0.22in
+      \hbox to \headerwidth {\hfill ECE1010 \ \ - \ \ Georgia Institute of Technology, \ Summer 2019 }
+      \vspace{4mm}
+      \hbox to \headerwidth {{\Large \hfill Lab \#\LabNum , \ Preliminary Reading: \LabTitle \hfill}}
+      \vspace{2mm}
+      \hbox to \headerwidth {\hfill Read \underline{before} the lab on \LabDate \hfill}
+      \vspace{2mm}
+      \hbox to \headerwidth {{\it \LabStr \hfill }}
+      }
+    }
+\end{center}
+\vspace*{4mm}
+{\fontfamily{lmss}\fontsize{9}{2}\selectfont 
+Read all of the sections and subsections below carefully and follow them in a sequential order. Make sure to read this before the start of Lab \LabNum . While reading the material, note down any questions you may have and ask them during lab time.
+}
+}
+
+\newcommand{\MakeLabTop}{
+\noindent
+\begin{center}
+  \framebox{
+    \vbox{
+      \headerwidth=\textwidth
+      \advance\headerwidth by -0.22in
+      \hbox to \headerwidth {\hfill ECE1010 \ \ - \ \ Georgia Institute of Technology, \ Summer 2019 }
+      \vspace{4mm}
+      \hbox to \headerwidth {{\Large \hfill Laboratory Exercise \LabNum: \LabTitle \hfill}}
+      \vspace{2mm}
+      \hbox to \headerwidth {\hfill \LabDate \hfill}
+      \vspace{2mm}
+      \hbox to \headerwidth {{\it \LabStr \hfill }}
+      }
+    }
+\end{center}
+\vspace*{4mm}
+{\fontfamily{lmss}\fontsize{9}{2}\selectfont 
+Read all of the sections and subsections below carefully and follow them in a sequential order. The prompts below are designed to guide you through the laboratory experiment. If you have any questions about what is expected for any portion, notify the instructor and they will assist you. Please be mindful of others who are working.  Collaboration is acceptable to the extent described in the syllabus.  Sharing answers and copying solutions is strictly prohibited. If a check-off is required, raise your hand and wait for the instructor to assist you. Make sure to complete all sections of the lab to the best of your ability. The sections will be graded for both completeness and accuracy. Make sure to show ALL of your work when necessary.
+}
+}
+
+\newlength\linefillheight
+\newlength\linefillthickness
+\setlength\linefillheight{.25in}
+\setlength\linefillthickness{0.1pt}
+
+\newcommand\linefill{\leavevmode
+    \leaders\hrule height \linefillthickness \hfill\kern\z@}
+
+
+\def\fillwithlines#1{%
+  \begingroup
+  \ifhmode
+    \par
+  \fi
+  \hrule height \z@
+  \nobreak
+  \setbox0=\hbox to \hsize{\hskip \@totalleftmargin
+          \vrule height \linefillheight depth \z@ width \z@
+          \linefill}%
+  % We use \cleaders (rather than \leaders) so that a given
+  % vertical space will always produce the same number of lines
+  % no matter where on the page it happens to start:
+  \cleaders \copy0 \vskip #1 \hbox{}%
+  \endgroup
+}
+
+\newcommand{\checkoffsub}{
+    \subsection{Check-off}
+
+    When you have completed the above experiments, ask the instructor to come over and verify completion. When satisfactory, the instructor will sign the below line.
+
+    \textbf{Instructor Check-off:} \underline{\hspace{10cm}}
+}
+
+\newcommand{\checkoffsubsub}{
+    \subsubsection{Check-off}
+
+    When you have completed the above experiments, ask the instructor to come over and verify completion. When satisfactory, the instructor will sign the below line.
+
+    \textbf{Instructor Check-off:} \underline{\hspace{10cm}}
+}
